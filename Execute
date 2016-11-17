@@ -1,0 +1,3747 @@
+@echo off
+setlocal EnableDelayedExpansion 
+
+:init
+REM variables voor ratio, match en no match
+set Match=0
+set Lose=0
+set Ratio=0
+goto start
+
+:start
+set /a Ratio=!Match! / !Lose!
+color 0F
+title Matches found: !Match! No matches: !Lose! Ratio: !Ratio!
+goto ready
+
+:ready
+REM maakt een variable "maand (p) nummer persoon / nummer
+REM vergelijk later de nummers en dan de maanden
+REM is did beiden "true" dan zegt ie dat er 2 dezelfde verjaardagen zijn
+set maandp1=""
+set maandp2=""
+set maandp3=""
+set maandp4=""
+set maandp5=""
+set maandp6=""
+set maandp7=""
+set maandp8=""
+set maandp9=""
+set maandp10=""
+set maandp11=""
+set maandp12=""
+set maandp13=""
+set maandp14=""
+set maandp15=""
+set maandp16=""
+set maandp17=""
+set maandp18=""
+set maandp19=""
+set maandp20=""
+set maandp21=""
+set maandp22=""
+set maandp23=""
+
+:maanden 
+REM variables voor de maanden
+REM dagen worden opgeteld hier voor een beter overzicht
+set maand1=31
+set maand2=59
+set maand3=90
+set maand4=120
+set maand5=151
+set maand6=181
+set maand7=212
+set maand8=243
+set maand9=273
+set maand10=304
+set maand11=334
+set maand12=365
+goto gasten
+
+:gasten
+REM maakt een variable voor elke gast
+cls
+set /a persoon1=%random% %%365 +1 
+set /a persoon2=%random% %%365 +1
+set /a persoon3=%random% %%365 +1
+set /a persoon4=%random% %%365 +1
+set /a persoon5=%random% %%365 +1
+set /a persoon6=%random% %%365 +1
+set /a persoon7=%random% %%365 +1
+set /a persoon8=%random% %%365 +1
+set /a persoon9=%random% %%365 +1
+set /a persoon10=%random% %%365 +1
+set /a persoon11=%random% %%365 +1
+set /a persoon12=%random% %%365 +1
+set /a persoon13=%random% %%365 +1
+set /a persoon14=%random% %%365 +1
+set /a persoon15=%random% %%365 +1
+set /a persoon16=%random% %%365 +1
+set /a persoon17=%random% %%365 +1
+set /a persoon18=%random% %%365 +1
+set /a persoon19=%random% %%365 +1
+set /a persoon20=%random% %%365 +1
+set /a persoon21=%random% %%365 +1
+set /a persoon22=%random% %%365 +1
+set /a persoon23=%random% %%365 +1
+goto checken
+
+:checken
+pause
+REM checkt in welke maand een gast behoord
+REM en trekt de vorige maand van dit getal af om de dag te weten
+if %persoon1% LEQ %maand1% (
+	set maandp1=Januari:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand2% (
+	set /a persoon1=%persoon1%-%maand1%
+	set maandp1=Februari:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand3% (
+	set /a persoon1=%persoon1%-%maand2%
+	set maandp1=Maart:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand4% (
+	set /a persoon1=%persoon1%-%maand3%
+	set maandp1=April:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand5% (
+	set /a persoon1=%persoon1%-%maand4%
+	set maandp1=Mei:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand6% (
+	set /a persoon1=%persoon1%-%maand5%
+	set maandp1=Juni:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand7% (
+	set /a persoon1=%persoon1%-%maand6%
+	set maandp1=Juli:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand8% (
+	set /a persoon1=%persoon1%-%maand7%
+	set maandp1=Augustus:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand9% (
+	set /a persoon1=%persoon1%-%maand8%
+	set maandp1=September:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand10% (
+	set /a persoon1=%persoon1%-%maand9%
+	set maandp1=Oktober:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand11% (
+	set /a persoon1=%persoon1%-%maand10%
+	set maandp1=November:
+	echo !maandp1! !persoon1!
+) else if %persoon1% LEQ %maand12% (
+	set /a persoon1=%persoon1%-%maand11%
+	set maandp1=December:
+	echo !maandp1! !persoon1!
+)
+if %persoon2% LEQ %maand1% (
+	set maandp2=Januari:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand2% (
+	set /a persoon2=%persoon2%-%maand1%
+	set maandp2=Februari:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand3% (
+	set /a persoon2=%persoon2%-%maand2%
+	set maandp2=Maart:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand4% (
+	set /a persoon2=%persoon2%-%maand3%
+	set maandp2=April:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand5% (
+	set /a persoon2=%persoon2%-%maand4%
+	set maandp2=Mei:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand6% (
+	set /a persoon2=%persoon2%-%maand5%
+	set maandp2=Juni:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand7% (
+	set /a persoon2=%persoon2%-%maand6%
+	set maandp2=Juli:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand8% (
+	set /a persoon2=%persoon2%-%maand7%
+	set maandp2=Augustus:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand9% (
+	set /a persoon2=%persoon2%-%maand8%
+	set maandp2=September:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand10% (
+	set /a persoon2=%persoon2%-%maand9%
+	set maandp2=Oktober:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand11% (
+	set /a persoon2=%persoon2%-%maand10%
+	set maandp2=November:
+	echo !maandp2! !persoon2!
+) else if %persoon2% LEQ %maand12% (
+	set /a persoon2=%persoon2%-%maand11%
+	set maandp2=December:
+	echo !maandp2! !persoon2!
+)
+if %persoon3% LEQ %maand1% (
+	set maandp3=Januari:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand2% (
+	set /a persoon3=%persoon3%-%maand1%
+	set maandp3=Februari:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand3% (
+	set /a persoon3=%persoon3%-%maand2%
+	set maandp3=Maart:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand4% (
+	set /a persoon3=%persoon3%-%maand3%
+	set maandp3=April:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand5% (
+	set /a persoon3=%persoon3%-%maand4%
+	set maandp3=Mei:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand6% (
+	set /a persoon3=%persoon3%-%maand5%
+	set maandp3=Juni:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand7% (
+	set /a persoon3=%persoon3%-%maand6%
+	set maandp3=Juli:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand8% (
+	set /a persoon3=%persoon3%-%maand7%
+	set maandp3=Augustus:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand9% (
+	set /a persoon3=%persoon3%-%maand8%
+	set maandp3=September:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand10% (
+	set /a persoon3=%persoon3%-%maand9%
+	set maandp3=Oktober:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand11% (
+	set /a persoon3=%persoon3%-%maand10%
+	set maandp3=November:
+	echo !maandp3! !persoon3!
+) else if %persoon3% LEQ %maand12% (
+	set /a persoon3=%persoon3%-%maand11%
+	set maandp3=December:
+	echo !maandp3! !persoon3!
+)
+if %persoon4% LEQ %maand1% (
+	set maandp4=Januari:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand2% (
+	set /a persoon4=%persoon4%-%maand1%
+	set maandp4=Februari:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand3% (
+	set /a persoon4=%persoon4%-%maand2%
+	set maandp4=Maart:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand4% (
+	set /a persoon4=%persoon4%-%maand3%
+	set maandp4=April:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand5% (
+	set /a persoon4=%persoon4%-%maand4%
+	set maandp4=Mei:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand6% (
+	set /a persoon4=%persoon4%-%maand5%
+	set maandp4=Juni:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand7% (
+	set /a persoon4=%persoon4%-%maand6%
+	set maandp4=Juli:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand8% (
+	set /a persoon4=%persoon4%-%maand7%
+	set maandp4=Augustus:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand9% (
+	set /a persoon4=%persoon4%-%maand8%
+	set maandp4=September:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand10% (
+	set /a persoon4=%persoon4%-%maand9%
+	set maandp4=Oktober:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand11% (
+	set /a persoon4=%persoon4%-%maand10%
+	set maandp4=November:
+	echo !maandp4! !persoon4!
+) else if %persoon4% LEQ %maand12% (
+	set /a persoon4=%persoon4%-%maand11%
+	set maandp4=December:
+	echo !maandp4! !persoon4!
+)
+if %persoon5% LEQ %maand1% (
+	set maandp5=Januari:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand2% (
+	set /a persoon5=%persoon5%-%maand1%
+	set maandp5=Februari:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand3% (
+	set /a persoon5=%persoon5%-%maand2%
+	set maandp5=Maart:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand4% (
+	set /a persoon5=%persoon5%-%maand3%
+	set maandp5=April:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand5% (
+	set /a persoon5=%persoon5%-%maand4%
+	set maandp5=Mei:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand6% (
+	set /a persoon5=%persoon5%-%maand5%
+	set maandp5=Juni:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand7% (
+	set /a persoon5=%persoon5%-%maand6%
+	set maandp5=Juli:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand8% (
+	set /a persoon5=%persoon5%-%maand7%
+	set maandp5=Augustus:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand9% (
+	set /a persoon5=%persoon5%-%maand8%
+	set maandp5=September:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand10% (
+	set /a persoon5=%persoon5%-%maand9%
+	set maandp5=Oktober:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand11% (
+	set /a persoon5=%persoon5%-%maand10%
+	set maandp5=November:
+	echo !maandp5! !persoon5!
+) else if %persoon5% LEQ %maand12% (
+	set /a persoon5=%persoon5%-%maand11%
+	set maandp5=December:
+	echo !maandp5! !persoon5!
+)
+if %persoon6% LEQ %maand1% (
+	set maandp6=Januari:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand2% (
+	set /a persoon6=%persoon6%-%maand1%
+	set maandp6=Februari:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand3% (
+	set /a persoon6=%persoon6%-%maand2%
+	set maandp6=Maart:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand4% (
+	set /a persoon6=%persoon6%-%maand3%
+	set maandp6=April:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand5% (
+	set /a persoon6=%persoon6%-%maand4%
+	set maandp6=Mei:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand6% (
+	set /a persoon6=%persoon6%-%maand5%
+	set maandp6=Juni:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand7% (
+	set /a persoon6=%persoon6%-%maand6%
+	set maandp6=Juli:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand8% (
+	set /a persoon6=%persoon6%-%maand7%
+	set maandp6=Augustus:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand9% (
+	set /a persoon6=%persoon6%-%maand8%
+	set maandp6=September:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand10% (
+	set /a persoon6=%persoon6%-%maand9%
+	set maandp6=Oktober:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand11% (
+	set /a persoon6=%persoon6%-%maand10%
+	set maandp6=November:
+	echo !maandp6! !persoon6!
+) else if %persoon6% LEQ %maand12% (
+	set /a persoon6=%persoon6%-%maand11%
+	set maandp6=December:
+	echo !maandp6! !persoon6!
+)
+if %persoon7% LEQ %maand1% (
+	set maandp7=Januari:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand2% (
+	set /a persoon7=%persoon7%-%maand1%
+	set maandp7=Februari:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand3% (
+	set /a persoon7=%persoon7%-%maand2%
+	set maandp7=Maart:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand4% (
+	set /a persoon7=%persoon7%-%maand3%
+	set maandp7=April:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand5% (
+	set /a persoon7=%persoon7%-%maand4%
+	set maandp7=Mei:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand6% (
+	set /a persoon7=%persoon7%-%maand5%
+	set maandp7=Juni:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand7% (
+	set /a persoon7=%persoon7%-%maand6%
+	set maandp7=Juli:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand8% (
+	set /a persoon7=%persoon7%-%maand7%
+	set maandp7=Augustus:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand9% (
+	set /a persoon7=%persoon7%-%maand8%
+	set maandp7=September:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand10% (
+	set /a persoon7=%persoon7%-%maand9%
+	set maandp7=Oktober:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand11% (
+	set /a persoon7=%persoon7%-%maand10%
+	set maandp7=November:
+	echo !maandp7! !persoon7!
+) else if %persoon7% LEQ %maand12% (
+	set /a persoon7=%persoon7%-%maand11%
+	set maandp7=December:
+	echo !maandp7! !persoon7!
+)
+if %persoon8% LEQ %maand1% (
+	set maandp8=Januari:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand2% (
+	set /a persoon8=%persoon8%-%maand1%
+	set maandp8=Februari:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand3% (
+	set /a persoon8=%persoon8%-%maand2%
+	set maandp8=Maart:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand4% (
+	set /a persoon8=%persoon8%-%maand3%
+	set maandp8=April:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand5% (
+	set /a persoon8=%persoon8%-%maand4%
+	set maandp8=Mei:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand6% (
+	set /a persoon8=%persoon8%-%maand5%
+	set maandp8=Juni:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand7% (
+	set /a persoon8=%persoon8%-%maand6%
+	set maandp8=Juli:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand8% (
+	set /a persoon8=%persoon8%-%maand7%
+	set maandp8=Augustus:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand9% (
+	set /a persoon8=%persoon8%-%maand8%
+	set maandp8=September:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand10% (
+	set /a persoon8=%persoon8%-%maand9%
+	set maandp8=Oktober:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand11% (
+	set /a persoon8=%persoon8%-%maand10%
+	set maandp8=November:
+	echo !maandp8! !persoon8!
+) else if %persoon8% LEQ %maand12% (
+	set /a persoon8=%persoon8%-%maand11%
+	set maandp8=December:
+	echo !maandp8! !persoon8!
+)
+if %persoon9% LEQ %maand1% (
+	set maandp9=Januari:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand2% (
+	set /a persoon9=%persoon9%-%maand1%
+	set maandp9=Februari:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand3% (
+	set /a persoon9=%persoon9%-%maand2%
+	set maandp9=Maart:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand4% (
+	set /a persoon9=%persoon9%-%maand3%
+	set maandp9=April:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand5% (
+	set /a persoon9=%persoon9%-%maand4%
+	set maandp9=Mei:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand6% (
+	set /a persoon9=%persoon9%-%maand5%
+	set maandp9=Juni:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand7% (
+	set /a persoon9=%persoon9%-%maand6%
+	set maandp9=Juli:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand8% (
+	set /a persoon9=%persoon9%-%maand7%
+	set maandp9=Augustus:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand9% (
+	set /a persoon9=%persoon9%-%maand8%
+	set maandp9=September:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand10% (
+	set /a persoon9=%persoon9%-%maand9%
+	set maandp9=Oktober:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand11% (
+	set /a persoon9=%persoon9%-%maand10%
+	set maandp9=November:
+	echo !maandp9! !persoon9!
+) else if %persoon9% LEQ %maand12% (
+	set /a persoon9=%persoon9%-%maand11%
+	set maandp9=December:
+	echo !maandp9! !persoon9!
+)
+if %persoon10% LEQ %maand1% (
+	set maandp10=Januari:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand2% (
+	set /a persoon10=%persoon10%-%maand1%
+	set maandp10=Februari:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand3% (
+	set /a persoon10=%persoon10%-%maand2%
+	set maandp10=Maart:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand4% (
+	set /a persoon10=%persoon10%-%maand3%
+	set maandp10=April:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand5% (
+	set /a persoon10=%persoon10%-%maand4%
+	set maandp10=Mei:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand6% (
+	set /a persoon10=%persoon10%-%maand5%
+	set maandp10=Juni:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand7% (
+	set /a persoon10=%persoon10%-%maand6%
+	set maandp10=Juli:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand8% (
+	set /a persoon10=%persoon10%-%maand7%
+	set maandp10=Augustus:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand9% (
+	set /a persoon10=%persoon10%-%maand8%
+	set maandp10=September:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand10% (
+	set /a persoon10=%persoon10%-%maand9%
+	set maandp10=Oktober:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand11% (
+	set /a persoon10=%persoon10%-%maand10%
+	set maandp10=November:
+	echo !maandp10! !persoon10!
+) else if %persoon10% LEQ %maand12% (
+	set /a persoon10=%persoon10%-%maand11%
+	set maandp10=December:
+	echo !maandp10! !persoon10!
+)
+if %persoon11% LEQ %maand1% (
+	set maandp11=Januari:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand2% (
+	set /a persoon11=%persoon11%-%maand1%
+	set maandp11=Februari:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand3% (
+	set /a persoon11=%persoon11%-%maand2%
+	set maandp11=Maart:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand4% (
+	set /a persoon11=%persoon11%-%maand3%
+	set maandp11=April:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand5% (
+	set /a persoon11=%persoon11%-%maand4%
+	set maandp11=Mei:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand6% (
+	set /a persoon11=%persoon11%-%maand5%
+	set maandp11=Juni:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand7% (
+	set /a persoon11=%persoon11%-%maand6%
+	set maandp11=Juli:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand8% (
+	set /a persoon11=%persoon11%-%maand7%
+	set maandp11=Augustus:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand9% (
+	set /a persoon11=%persoon11%-%maand8%
+	set maandp11=September:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand10% (
+	set /a persoon11=%persoon11%-%maand9%
+	set maandp11=Oktober:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand11% (
+	set /a persoon11=%persoon11%-%maand10%
+	set maandp11=November:
+	echo !maandp11! !persoon11!
+) else if %persoon11% LEQ %maand12% (
+	set /a persoon11=%persoon11%-%maand11%
+	set maandp11=December:
+	echo !maandp11! !persoon11!
+)
+if %persoon12% LEQ %maand1% (
+	set maandp12=Januari:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand2% (
+	set /a persoon12=%persoon12%-%maand1%
+	set maandp12=Februari:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand3% (
+	set /a persoon12=%persoon12%-%maand2%
+	set maandp12=Maart:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand4% (
+	set /a persoon12=%persoon12%-%maand3%
+	set maandp12=April:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand5% (
+	set /a persoon12=%persoon12%-%maand4%
+	set maandp12=Mei:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand6% (
+	set /a persoon12=%persoon12%-%maand5%
+	set maandp12=Juni:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand7% (
+	set /a persoon12=%persoon12%-%maand6%
+	set maandp12=Juli:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand8% (
+	set /a persoon12=%persoon12%-%maand7%
+	set maandp12=Augustus:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand9% (
+	set /a persoon12=%persoon12%-%maand8%
+	set maandp12=September:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand10% (
+	set /a persoon12=%persoon12%-%maand9%
+	set maandp12=Oktober:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand11% (
+	set /a persoon12=%persoon12%-%maand10%
+	set maandp12=November:
+	echo !maandp12! !persoon12!
+) else if %persoon12% LEQ %maand12% (
+	set /a persoon12=%persoon12%-%maand11%
+	set maandp12=December:
+	echo !maandp12! !persoon12!
+)
+if %persoon13% LEQ %maand1% (
+	set maandp13=Januari:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand2% (
+	set /a persoon13=%persoon13%-%maand1%
+	set maandp13=Februari:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand3% (
+	set /a persoon13=%persoon13%-%maand2%
+	set maandp13=Maart:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand4% (
+	set /a persoon13=%persoon13%-%maand3%
+	set maandp13=April:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand5% (
+	set /a persoon13=%persoon13%-%maand4%
+	set maandp13=Mei:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand6% (
+	set /a persoon13=%persoon13%-%maand5%
+	set maandp13=Juni:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand7% (
+	set /a persoon13=%persoon13%-%maand6%
+	set maandp13=Juli:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand8% (
+	set /a persoon13=%persoon13%-%maand7%
+	set maandp13=Augustus:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand9% (
+	set /a persoon13=%persoon13%-%maand8%
+	set maandp13=September:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand10% (
+	set /a persoon13=%persoon13%-%maand9%
+	set maandp13=Oktober:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand11% (
+	set /a persoon13=%persoon13%-%maand10%
+	set maandp13=November:
+	echo !maandp13! !persoon13!
+) else if %persoon13% LEQ %maand12% (
+	set /a persoon13=%persoon13%-%maand11%
+	set maandp13=December:
+	echo !maandp13! !persoon13!
+)
+if %persoon14% LEQ %maand1% (
+	set maandp14=Januari:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand2% (
+	set /a persoon14=%persoon14%-%maand1%
+	set maandp14=Februari:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand3% (
+	set /a persoon14=%persoon14%-%maand2%
+	set maandp14=Maart:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand4% (
+	set /a persoon14=%persoon14%-%maand3%
+	set maandp14=April:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand5% (
+	set /a persoon14=%persoon14%-%maand4%
+	set maandp14=Mei:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand6% (
+	set /a persoon14=%persoon14%-%maand5%
+	set maandp14=Juni:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand7% (
+	set /a persoon14=%persoon14%-%maand6%
+	set maandp14=Juli:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand8% (
+	set /a persoon14=%persoon14%-%maand7%
+	set maandp14=Augustus:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand9% (
+	set /a persoon14=%persoon14%-%maand8%
+	set maandp14=September:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand10% (
+	set /a persoon14=%persoon14%-%maand9%
+	set maandp14=Oktober:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand11% (
+	set /a persoon14=%persoon14%-%maand10%
+	set maandp14=November:
+	echo !maandp14! !persoon14!
+) else if %persoon14% LEQ %maand12% (
+	set /a persoon14=%persoon14%-%maand11%
+	set maandp14=December:
+	echo !maandp14! !persoon14!
+)
+if %persoon15% LEQ %maand1% (
+	set maandp15=Januari:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand2% (
+	set /a persoon15=%persoon15%-%maand1%
+	set maandp15=Februari:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand3% (
+	set /a persoon15=%persoon15%-%maand2%
+	set maandp15=Maart:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand4% (
+	set /a persoon15=%persoon15%-%maand3%
+	set maandp15=April:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand5% (
+	set /a persoon15=%persoon15%-%maand4%
+	set maandp15=Mei:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand6% (
+	set /a persoon15=%persoon15%-%maand5%
+	set maandp15=Juni:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand7% (
+	set /a persoon15=%persoon15%-%maand6%
+	set maandp15=Juli:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand8% (
+	set /a persoon15=%persoon15%-%maand7%
+	set maandp15=Augustus:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand9% (
+	set /a persoon15=%persoon15%-%maand8%
+	set maandp15=September:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand10% (
+	set /a persoon15=%persoon15%-%maand9%
+	set maandp15=Oktober:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand11% (
+	set /a persoon15=%persoon15%-%maand10%
+	set maandp15=November:
+	echo !maandp15! !persoon15!
+) else if %persoon15% LEQ %maand12% (
+	set /a persoon15=%persoon15%-%maand11%
+	set maandp15=December:
+	echo !maandp15! !persoon15!
+)
+if %persoon16% LEQ %maand1% (
+	set maandp16=Januari:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand2% (
+	set /a persoon16=%persoon16%-%maand1%
+	set maandp16=Februari:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand3% (
+	set /a persoon16=%persoon16%-%maand2%
+	set maandp16=Maart:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand4% (
+	set /a persoon16=%persoon16%-%maand3%
+	set maandp16=April:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand5% (
+	set /a persoon16=%persoon16%-%maand4%
+	set maandp16=Mei:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand6% (
+	set /a persoon16=%persoon16%-%maand5%
+	set maandp16=Juni:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand7% (
+	set /a persoon16=%persoon16%-%maand6%
+	set maandp16=Juli:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand8% (
+	set /a persoon16=%persoon16%-%maand7%
+	set maandp16=Augustus:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand9% (
+	set /a persoon16=%persoon16%-%maand8%
+	set maandp16=September:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand10% (
+	set /a persoon16=%persoon16%-%maand9%
+	set maandp16=Oktober:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand11% (
+	set /a persoon16=%persoon16%-%maand10%
+	set maandp16=November:
+	echo !maandp16! !persoon16!
+) else if %persoon16% LEQ %maand12% (
+	set /a persoon16=%persoon16%-%maand11%
+	set maandp16=December:
+	echo !maandp16! !persoon16!
+)
+if %persoon17% LEQ %maand1% (
+	set maandp17=Januari:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand2% (
+	set /a persoon17=%persoon17%-%maand1%
+	set maandp17=Februari:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand3% (
+	set /a persoon17=%persoon17%-%maand2%
+	set maandp17=Maart:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand4% (
+	set /a persoon17=%persoon17%-%maand3%
+	set maandp17=April:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand5% (
+	set /a persoon17=%persoon17%-%maand4%
+	set maandp17=Mei:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand6% (
+	set /a persoon17=%persoon17%-%maand5%
+	set maandp17=Juni:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand7% (
+	set /a persoon17=%persoon17%-%maand6%
+	set maandp17=Juli:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand8% (
+	set /a persoon17=%persoon17%-%maand7%
+	set maandp17=Augustus:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand9% (
+	set /a persoon17=%persoon17%-%maand8%
+	set maandp17=September:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand10% (
+	set /a persoon17=%persoon17%-%maand9%
+	set maandp17=Oktober:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand11% (
+	set /a persoon17=%persoon17%-%maand10%
+	set maandp17=November:
+	echo !maandp17! !persoon17!
+) else if %persoon17% LEQ %maand12% (
+	set /a persoon17=%persoon17%-%maand11%
+	set maandp17=December:
+	echo !maandp17! !persoon17!
+)
+if %persoon18% LEQ %maand1% (
+	set maandp18=Januari:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand2% (
+	set /a persoon18=%persoon18%-%maand1%
+	set maandp18=Februari:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand3% (
+	set /a persoon18=%persoon18%-%maand2%
+	set maandp18=Maart:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand4% (
+	set /a persoon18=%persoon18%-%maand3%
+	set maandp18=April:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand5% (
+	set /a persoon18=%persoon18%-%maand4%
+	set maandp18=Mei:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand6% (
+	set /a persoon18=%persoon18%-%maand5%
+	set maandp18=Juni:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand7% (
+	set /a persoon18=%persoon18%-%maand6%
+	set maandp18=Juli:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand8% (
+	set /a persoon18=%persoon18%-%maand7%
+	set maandp18=Augustus:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand9% (
+	set /a persoon18=%persoon18%-%maand8%
+	set maandp18=September:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand10% (
+	set /a persoon18=%persoon18%-%maand9%
+	set maandp18=Oktober:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand11% (
+	set /a persoon18=%persoon18%-%maand10%
+	set maandp18=November:
+	echo !maandp18! !persoon18!
+) else if %persoon18% LEQ %maand12% (
+	set /a persoon18=%persoon18%-%maand11%
+	set maandp18=December:
+	echo !maandp18! !persoon18!
+)
+if %persoon19% LEQ %maand1% (
+	set maandp19=Januari:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand2% (
+	set /a persoon19=%persoon19%-%maand1%
+	set maandp19=Februari:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand3% (
+	set /a persoon19=%persoon19%-%maand2%
+	set maandp19=Maart:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand4% (
+	set /a persoon19=%persoon19%-%maand3%
+	set maandp19=April:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand5% (
+	set /a persoon19=%persoon19%-%maand4%
+	set maandp19=Mei:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand6% (
+	set /a persoon19=%persoon19%-%maand5%
+	set maandp19=Juni:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand7% (
+	set /a persoon19=%persoon19%-%maand6%
+	set maandp19=Juli:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand8% (
+	set /a persoon19=%persoon19%-%maand7%
+	set maandp19=Augustus:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand9% (
+	set /a persoon19=%persoon19%-%maand8%
+	set maandp19=September:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand10% (
+	set /a persoon19=%persoon19%-%maand9%
+	set maandp19=Oktober:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand11% (
+	set /a persoon19=%persoon19%-%maand10%
+	set maandp19=November:
+	echo !maandp19! !persoon19!
+) else if %persoon19% LEQ %maand12% (
+	set /a persoon19=%persoon19%-%maand11%
+	set maandp19=December:
+	echo !maandp19! !persoon19!
+)
+if %persoon20% LEQ %maand1% (
+	set maandp20=Januari:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand2% (
+	set /a persoon20=%persoon20%-%maand1%
+	set maandp20=Februari:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand3% (
+	set /a persoon20=%persoon20%-%maand2%
+	set maandp20=Maart:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand4% (
+	set /a persoon20=%persoon20%-%maand3%
+	set maandp20=April:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand5% (
+	set /a persoon20=%persoon20%-%maand4%
+	set maandp20=Mei:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand6% (
+	set /a persoon20=%persoon20%-%maand5%
+	set maandp20=Juni:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand7% (
+	set /a persoon20=%persoon20%-%maand6%
+	set maandp20=Juli:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand8% (
+	set /a persoon20=%persoon20%-%maand7%
+	set maandp20=Augustus:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand9% (
+	set /a persoon20=%persoon20%-%maand8%
+	set maandp20=September:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand10% (
+	set /a persoon20=%persoon20%-%maand9%
+	set maandp20=Oktober:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand11% (
+	set /a persoon20=%persoon20%-%maand10%
+	set maandp20=November:
+	echo !maandp20! !persoon20!
+) else if %persoon20% LEQ %maand12% (
+	set /a persoon20=%persoon20%-%maand11%
+	set maandp20=December:
+	echo !maandp20! !persoon20!
+)
+if %persoon21% LEQ %maand1% (
+	set maandp21=Januari:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand2% (
+	set /a persoon21=%persoon21%-%maand1%
+	set maandp21=Februari:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand3% (
+	set /a persoon21=%persoon21%-%maand2%
+	set maandp21=Maart:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand4% (
+	set /a persoon21=%persoon21%-%maand3%
+	set maandp21=April:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand5% (
+	set /a persoon21=%persoon21%-%maand4%
+	set maandp21=Mei:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand6% (
+	set /a persoon21=%persoon21%-%maand5%
+	set maandp21=Juni:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand7% (
+	set /a persoon21=%persoon21%-%maand6%
+	set maandp21=Juli:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand8% (
+	set /a persoon21=%persoon21%-%maand7%
+	set maandp21=Augustus:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand9% (
+	set /a persoon21=%persoon21%-%maand8%
+	set maandp21=September:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand10% (
+	set /a persoon21=%persoon21%-%maand9%
+	set maandp21=Oktober:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand11% (
+	set /a persoon21=%persoon21%-%maand10%
+	set maandp21=November:
+	echo !maandp21! !persoon21!
+) else if %persoon21% LEQ %maand12% (
+	set /a persoon21=%persoon21%-%maand11%
+	set maandp21=December:
+	echo !maandp21! !persoon21!
+)
+if %persoon22% LEQ %maand1% (
+	set maandp22=Januari:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand2% (
+	set /a persoon22=%persoon22%-%maand1%
+	set maandp22=Februari:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand3% (
+	set /a persoon22=%persoon22%-%maand2%
+	set maandp22=Maart:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand4% (
+	set /a persoon22=%persoon22%-%maand3%
+	set maandp22=April:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand5% (
+	set /a persoon22=%persoon22%-%maand4%
+	set maandp22=Mei:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand6% (
+	set /a persoon22=%persoon22%-%maand5%
+	set maandp22=Juni:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand7% (
+	set /a persoon22=%persoon22%-%maand6%
+	set maandp22=Juli:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand8% (
+	set /a persoon22=%persoon22%-%maand7%
+	set maandp22=Augustus:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand9% (
+	set /a persoon22=%persoon22%-%maand8%
+	set maandp22=September:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand10% (
+	set /a persoon22=%persoon22%-%maand9%
+	set maandp22=Oktober:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand11% (
+	set /a persoon22=%persoon22%-%maand10%
+	set maandp22=November:
+	echo !maandp22! !persoon22!
+) else if %persoon22% LEQ %maand12% (
+	set /a persoon22=%persoon22%-%maand11%
+	set maandp22=December:
+	echo !maandp22! !persoon22!
+)
+if %persoon23% LEQ %maand1% (
+	set maandp23=Januari:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand2% (
+	set /a persoon23=%persoon23%-%maand1%
+	set maandp23=Februari:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand3% (
+	set /a persoon23=%persoon23%-%maand2%
+	set maandp23=Maart:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand4% (
+	set /a persoon23=%persoon23%-%maand3%
+	set maandp23=April:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand5% (
+	set /a persoon23=%persoon23%-%maand4%
+	set maandp23=Mei:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand6% (
+	set /a persoon23=%persoon23%-%maand5%
+	set maandp23=Juni:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand7% (
+	set /a persoon23=%persoon23%-%maand6%
+	set maandp23=Juli:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand8% (
+	set /a persoon23=%persoon23%-%maand7%
+	set maandp23=Augustus:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand9% (
+	set /a persoon23=%persoon23%-%maand8%
+	set maandp23=September:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand10% (
+	set /a persoon23=%persoon23%-%maand9%
+	set maandp23=Oktober:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand11% (
+	set /a persoon23=%persoon23%-%maand10%
+	set maandp23=November:
+	echo !maandp23! !persoon23!
+) else if %persoon23% LEQ %maand12% (
+	set /a persoon23=%persoon23%-%maand11%
+	set maandp23=December:
+	echo !maandp23! !persoon23!
+)
+pause
+goto compare
+
+:compare
+if !persoon1! EQU !persoon2! (
+	if !maandp1! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon3! (
+	if !maandp1! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon4! (
+	if !maandp1! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon5! (
+	if !maandp1! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon6! (
+	if !maandp1! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon7! (
+	if !maandp1! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon8! (
+	if !maandp1! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon9! (
+	if !maandp1! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon10! (
+	if !maandp1! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon11! (
+	if !maandp1! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon12! (
+	if !maandp1! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon13! (
+	if !maandp1! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon14! (
+	if !maandp1! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon15! (
+	if !maandp1! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon16! (
+	if !maandp1! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon17! (
+	if !maandp1! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon18! (
+	if !maandp1! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon19! (
+	if !maandp1! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon20! (
+	if !maandp1! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon21! (
+	if !maandp1! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon22! (
+	if !maandp1! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon1! EQU !persoon23! (
+	if !maandp1! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon1! (
+	if !maandp2! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon3! (
+	if !maandp2! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon4! (
+	if !maandp2! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon5! (
+	if !maandp2! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon6! (
+	if !maandp2! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon7! (
+	if !maandp2! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon8! (
+	if !maandp2! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon9! (
+	if !maandp2! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon10! (
+	if !maandp2! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon11! (
+	if !maandp2! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon12! (
+	if !maandp2! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon13! (
+	if !maandp2! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon14! (
+	if !maandp2! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon15! (
+	if !maandp2! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon16! (
+	if !maandp2! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon17! (
+	if !maandp2! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon18! (
+	if !maandp2! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon19! (
+	if !maandp2! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon20! (
+	if !maandp2! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon21! (
+	if !maandp2! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon22! (
+	if !maandp2! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon2! EQU !persoon23! (
+	if !maandp2! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon1! (
+	if !maandp3! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon2! (
+	if !maandp3! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon4! (
+	if !maandp3! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon5! (
+	if !maandp3! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon6! (
+	if !maandp3! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon7! (
+	if !maandp3! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon8! (
+	if !maandp3! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon9! (
+	if !maandp3! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon10! (
+	if !maandp3! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon11! (
+	if !maandp3! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon12! (
+	if !maandp3! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon13! (
+	if !maandp3! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon14! (
+	if !maandp3! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon15! (
+	if !maandp3! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon16! (
+	if !maandp3! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon17! (
+	if !maandp3! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon18! (
+	if !maandp3! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon19! (
+	if !maandp3! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon20! (
+	if !maandp3! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon21! (
+	if !maandp3! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon22! (
+	if !maandp3! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon3! EQU !persoon23! (
+	if !maandp3! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon1! (
+	if !maandp4! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon2! (
+	if !maandp4! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon3! (
+	if !maandp4! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon5! (
+	if !maandp4! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon6! (
+	if !maandp4! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon7! (
+	if !maandp4! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon8! (
+	if !maandp4! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon9! (
+	if !maandp4! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon10! (
+	if !maandp4! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon11! (
+	if !maandp4! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon12! (
+	if !maandp4! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon13! (
+	if !maandp4! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon14! (
+	if !maandp4! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon15! (
+	if !maandp4! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon16! (
+	if !maandp4! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon17! (
+	if !maandp4! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon18! (
+	if !maandp4! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon19! (
+	if !maandp4! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon20! (
+	if !maandp4! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon21! (
+	if !maandp4! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon22! (
+	if !maandp4! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon4! EQU !persoon23! (
+	if !maandp4! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon1! (
+	if !maandp5! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon2! (
+	if !maandp5! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon3! (
+	if !maandp5! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon4! (
+	if !maandp5! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon6! (
+	if !maandp5! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon7! (
+	if !maandp5! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon8! (
+	if !maandp5! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon9! (
+	if !maandp5! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon10! (
+	if !maandp5! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon11! (
+	if !maandp5! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon12! (
+	if !maandp5! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon13! (
+	if !maandp5! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon14! (
+	if !maandp5! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon15! (
+	if !maandp5! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon16! (
+	if !maandp5! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon17! (
+	if !maandp5! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon18! (
+	if !maandp5! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon19! (
+	if !maandp5! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon20! (
+	if !maandp5! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon21! (
+	if !maandp5! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon22! (
+	if !maandp5! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon5! EQU !persoon23! (
+	if !maandp5! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon1! (
+	if !maandp6! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon2! (
+	if !maandp6! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon3! (
+	if !maandp6! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon4! (
+	if !maandp6! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon5! (
+	if !maandp6! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon7! (
+	if !maandp6! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon8! (
+	if !maandp6! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon9! (
+	if !maandp6! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon10! (
+	if !maandp6! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon11! (
+	if !maandp6! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon12! (
+	if !maandp6! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon13! (
+	if !maandp6! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon14! (
+	if !maandp6! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon15! (
+	if !maandp6! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon16! (
+	if !maandp6! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon17! (
+	if !maandp6! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon18! (
+	if !maandp6! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon19! (
+	if !maandp6! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon20! (
+	if !maandp6! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon21! (
+	if !maandp6! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon22! (
+	if !maandp6! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon6! EQU !persoon23! (
+	if !maandp6! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon1! (
+	if !maandp7! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon2! (
+	if !maandp7! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon3! (
+	if !maandp7! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon4! (
+	if !maandp7! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon5! (
+	if !maandp7! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon6! (
+	if !maandp7! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon8! (
+	if !maandp7! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon9! (
+	if !maandp7! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon10! (
+	if !maandp7! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon11! (
+	if !maandp7! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon12! (
+	if !maandp7! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon13! (
+	if !maandp7! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon14! (
+	if !maandp7! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon15! (
+	if !maandp7! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon16! (
+	if !maandp7! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon17! (
+	if !maandp7! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon18! (
+	if !maandp7! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon19! (
+	if !maandp7! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon20! (
+	if !maandp7! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon21! (
+	if !maandp7! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon22! (
+	if !maandp7! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon7! EQU !persoon23! (
+	if !maandp7! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon1! (
+	if !maandp8! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon2! (
+	if !maandp8! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon3! (
+	if !maandp8! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon4! (
+	if !maandp8! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon5! (
+	if !maandp8! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon6! (
+	if !maandp8! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon7! (
+	if !maandp8! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon9! (
+	if !maandp8! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon10! (
+	if !maandp8! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon11! (
+	if !maandp8! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon12! (
+	if !maandp8! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon13! (
+	if !maandp8! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon14! (
+	if !maandp8! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon15! (
+	if !maandp8! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon16! (
+	if !maandp8! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon17! (
+	if !maandp8! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon18! (
+	if !maandp8! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon19! (
+	if !maandp8! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon20! (
+	if !maandp8! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon21! (
+	if !maandp8! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon22! (
+	if !maandp8! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon8! EQU !persoon23! (
+	if !maandp8! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon1! (
+	if !maandp9! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon2! (
+	if !maandp9! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon3! (
+	if !maandp9! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon4! (
+	if !maandp9! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon5! (
+	if !maandp9! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon6! (
+	if !maandp9! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon7! (
+	if !maandp9! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon8! (
+	if !maandp9! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon10! (
+	if !maandp9! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon11! (
+	if !maandp9! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon12! (
+	if !maandp9! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon13! (
+	if !maandp9! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon14! (
+	if !maandp9! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon15! (
+	if !maandp9! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon16! (
+	if !maandp9! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon17! (
+	if !maandp9! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon18! (
+	if !maandp9! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon19! (
+	if !maandp9! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon20! (
+	if !maandp9! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon21! (
+	if !maandp9! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon22! (
+	if !maandp9! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon9! EQU !persoon23! (
+	if !maandp9! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon1! (
+	if !maandp10! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon2! (
+	if !maandp10! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon3! (
+	if !maandp10! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon4! (
+	if !maandp10! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon5! (
+	if !maandp10! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon6! (
+	if !maandp10! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon7! (
+	if !maandp10! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon8! (
+	if !maandp10! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon9! (
+	if !maandp10! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon11! (
+	if !maandp10! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon12! (
+	if !maandp10! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon13! (
+	if !maandp10! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon14! (
+	if !maandp10! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon15! (
+	if !maandp10! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon16! (
+	if !maandp10! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon17! (
+	if !maandp10! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon18! (
+	if !maandp10! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon19! (
+	if !maandp10! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon20! (
+	if !maandp10! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon21! (
+	if !maandp10! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon22! (
+	if !maandp10! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon10! EQU !persoon23! (
+	if !maandp10! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon1! (
+	if !maandp11! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon2! (
+	if !maandp11! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon3! (
+	if !maandp11! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon4! (
+	if !maandp11! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon5! (
+	if !maandp11! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon6! (
+	if !maandp11! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon7! (
+	if !maandp11! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon8! (
+	if !maandp11! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon9! (
+	if !maandp11! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon10! (
+	if !maandp11! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon12! (
+	if !maandp11! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon13! (
+	if !maandp11! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon14! (
+	if !maandp11! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon15! (
+	if !maandp11! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon16! (
+	if !maandp11! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon17! (
+	if !maandp11! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon18! (
+	if !maandp11! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon19! (
+	if !maandp11! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon20! (
+	if !maandp11! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon21! (
+	if !maandp11! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon22! (
+	if !maandp11! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon11! EQU !persoon23! (
+	if !maandp11! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon1! (
+	if !maandp12! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon2! (
+	if !maandp12! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon3! (
+	if !maandp12! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon4! (
+	if !maandp12! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon5! (
+	if !maandp12! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon6! (
+	if !maandp12! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon7! (
+	if !maandp12! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon8! (
+	if !maandp12! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon9! (
+	if !maandp12! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon10! (
+	if !maandp12! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon11! (
+	if !maandp12! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon13! (
+	if !maandp12! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon14! (
+	if !maandp12! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon15! (
+	if !maandp12! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon16! (
+	if !maandp12! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon17! (
+	if !maandp12! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon18! (
+	if !maandp12! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon19! (
+	if !maandp12! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon20! (
+	if !maandp12! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon21! (
+	if !maandp12! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon22! (
+	if !maandp12! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon12! EQU !persoon23! (
+	if !maandp12! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon1! (
+	if !maandp13! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon2! (
+	if !maandp13! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon3! (
+	if !maandp13! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon4! (
+	if !maandp13! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon5! (
+	if !maandp13! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon6! (
+	if !maandp13! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon7! (
+	if !maandp13! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon8! (
+	if !maandp13! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon9! (
+	if !maandp13! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon10! (
+	if !maandp13! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon11! (
+	if !maandp13! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon12! (
+	if !maandp13! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon14! (
+	if !maandp13! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon15! (
+	if !maandp13! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon16! (
+	if !maandp13! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon17! (
+	if !maandp13! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon18! (
+	if !maandp13! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon19! (
+	if !maandp13! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon20! (
+	if !maandp13! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon21! (
+	if !maandp13! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon22! (
+	if !maandp13! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon13! EQU !persoon23! (
+	if !maandp13! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon1! (
+	if !maandp14! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon2! (
+	if !maandp14! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon3! (
+	if !maandp14! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon4! (
+	if !maandp14! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon5! (
+	if !maandp14! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon6! (
+	if !maandp14! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon7! (
+	if !maandp14! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon8! (
+	if !maandp14! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon9! (
+	if !maandp14! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon10! (
+	if !maandp14! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon11! (
+	if !maandp14! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon12! (
+	if !maandp14! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon13! (
+	if !maandp14! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon15! (
+	if !maandp14! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon16! (
+	if !maandp14! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon17! (
+	if !maandp14! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon18! (
+	if !maandp14! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon19! (
+	if !maandp14! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon20! (
+	if !maandp14! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon21! (
+	if !maandp14! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon22! (
+	if !maandp14! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon14! EQU !persoon23! (
+	if !maandp14! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon1! (
+	if !maandp15! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon2! (
+	if !maandp15! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon3! (
+	if !maandp15! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon4! (
+	if !maandp15! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon5! (
+	if !maandp15! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon6! (
+	if !maandp15! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon7! (
+	if !maandp15! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon8! (
+	if !maandp15! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon9! (
+	if !maandp15! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon10! (
+	if !maandp15! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon11! (
+	if !maandp15! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon12! (
+	if !maandp15! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon13! (
+	if !maandp15! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon14! (
+	if !maandp15! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon16! (
+	if !maandp15! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon17! (
+	if !maandp15! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon18! (
+	if !maandp15! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon19! (
+	if !maandp15! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon20! (
+	if !maandp15! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon21! (
+	if !maandp15! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon22! (
+	if !maandp15! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon15! EQU !persoon23! (
+	if !maandp15! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon1! (
+	if !maandp16! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon2! (
+	if !maandp16! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon3! (
+	if !maandp16! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon4! (
+	if !maandp16! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon5! (
+	if !maandp16! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon6! (
+	if !maandp16! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon7! (
+	if !maandp16! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon8! (
+	if !maandp16! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon9! (
+	if !maandp16! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon10! (
+	if !maandp16! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon11! (
+	if !maandp16! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon12! (
+	if !maandp16! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon13! (
+	if !maandp16! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon14! (
+	if !maandp16! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon15! (
+	if !maandp16! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon17! (
+	if !maandp16! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon18! (
+	if !maandp16! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon19! (
+	if !maandp16! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon20! (
+	if !maandp16! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon21! (
+	if !maandp16! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon22! (
+	if !maandp16! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon16! EQU !persoon23! (
+	if !maandp16! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon1! (
+	if !maandp17! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon2! (
+	if !maandp17! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon3! (
+	if !maandp17! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon4! (
+	if !maandp17! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon5! (
+	if !maandp17! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon6! (
+	if !maandp17! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon7! (
+	if !maandp17! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon8! (
+	if !maandp17! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon9! (
+	if !maandp17! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon10! (
+	if !maandp17! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon11! (
+	if !maandp17! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon12! (
+	if !maandp17! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon13! (
+	if !maandp17! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon14! (
+	if !maandp17! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon15! (
+	if !maandp17! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon16! (
+	if !maandp17! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon18! (
+	if !maandp17! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon19! (
+	if !maandp17! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon20! (
+	if !maandp17! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon21! (
+	if !maandp17! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon22! (
+	if !maandp17! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon17! EQU !persoon23! (
+	if !maandp17! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon1! (
+	if !maandp18! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon2! (
+	if !maandp18! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon3! (
+	if !maandp18! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon4! (
+	if !maandp18! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon5! (
+	if !maandp18! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon6! (
+	if !maandp18! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon7! (
+	if !maandp18! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon8! (
+	if !maandp18! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon9! (
+	if !maandp18! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon10! (
+	if !maandp18! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon11! (
+	if !maandp18! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon12! (
+	if !maandp18! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon13! (
+	if !maandp18! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon14! (
+	if !maandp18! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon15! (
+	if !maandp18! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon16! (
+	if !maandp18! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon17! (
+	if !maandp18! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon19! (
+	if !maandp18! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon20! (
+	if !maandp18! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon21! (
+	if !maandp18! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon22! (
+	if !maandp18! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon18! EQU !persoon23! (
+	if !maandp18! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon1! (
+	if !maandp19! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon2! (
+	if !maandp19! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon3! (
+	if !maandp19! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon4! (
+	if !maandp19! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon5! (
+	if !maandp19! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon6! (
+	if !maandp19! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon7! (
+	if !maandp19! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon8! (
+	if !maandp19! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon9! (
+	if !maandp19! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon10! (
+	if !maandp19! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon11! (
+	if !maandp19! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon12! (
+	if !maandp19! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon13! (
+	if !maandp19! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon14! (
+	if !maandp19! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon15! (
+	if !maandp19! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon16! (
+	if !maandp19! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon17! (
+	if !maandp19! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon18! (
+	if !maandp19! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon20! (
+	if !maandp19! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon21! (
+	if !maandp19! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon22! (
+	if !maandp19! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon19! EQU !persoon23! (
+	if !maandp19! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon1! (
+	if !maandp20! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon2! (
+	if !maandp20! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon3! (
+	if !maandp20! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon4! (
+	if !maandp20! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon5! (
+	if !maandp20! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon6! (
+	if !maandp20! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon7! (
+	if !maandp20! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon8! (
+	if !maandp20! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon9! (
+	if !maandp20! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon10! (
+	if !maandp20! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon11! (
+	if !maandp20! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon12! (
+	if !maandp20! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon13! (
+	if !maandp20! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon14! (
+	if !maandp20! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon15! (
+	if !maandp20! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon16! (
+	if !maandp20! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon17! (
+	if !maandp20! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon18! (
+	if !maandp20! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon19! (
+	if !maandp20! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon21! (
+	if !maandp20! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon22! (
+	if !maandp20! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon20! EQU !persoon23! (
+	if !maandp20! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon1! (
+	if !maandp21! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon2! (
+	if !maandp21! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon3! (
+	if !maandp21! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon4! (
+	if !maandp21! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon5! (
+	if !maandp21! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon6! (
+	if !maandp21! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon7! (
+	if !maandp21! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon8! (
+	if !maandp21! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon9! (
+	if !maandp21! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon10! (
+	if !maandp21! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon11! (
+	if !maandp21! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon12! (
+	if !maandp21! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon13! (
+	if !maandp21! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon14! (
+	if !maandp21! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon15! (
+	if !maandp21! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon16! (
+	if !maandp21! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon17! (
+	if !maandp21! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon18! (
+	if !maandp21! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon19! (
+	if !maandp21! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon20! (
+	if !maandp21! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon22! (
+	if !maandp21! EQU !maandp22! (
+		goto success
+	)
+)
+if !persoon21! EQU !persoon23! (
+	if !maandp21! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon1! (
+	if !maandp22! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon2! (
+	if !maandp22! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon3! (
+	if !maandp22! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon4! (
+	if !maandp22! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon5! (
+	if !maandp22! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon6! (
+	if !maandp22! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon7! (
+	if !maandp22! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon8! (
+	if !maandp22! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon9! (
+	if !maandp22! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon10! (
+	if !maandp22! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon11! (
+	if !maandp22! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon12! (
+	if !maandp22! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon13! (
+	if !maandp22! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon14! (
+	if !maandp22! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon15! (
+	if !maandp22! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon16! (
+	if !maandp22! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon17! (
+	if !maandp22! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon18! (
+	if !maandp22! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon19! (
+	if !maandp22! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon20! (
+	if !maandp22! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon21! (
+	if !maandp22! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon22! EQU !persoon23! (
+	if !maandp22! EQU !maandp23! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon1! (
+	if !maandp23! EQU !maandp1! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon2! (
+	if !maandp23! EQU !maandp2! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon3! (
+	if !maandp23! EQU !maandp3! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon4! (
+	if !maandp23! EQU !maandp4! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon5! (
+	if !maandp23! EQU !maandp5! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon6! (
+	if !maandp23! EQU !maandp6! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon7! (
+	if !maandp23! EQU !maandp7! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon8! (
+	if !maandp23! EQU !maandp8! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon9! (
+	if !maandp23! EQU !maandp9! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon10! (
+	if !maandp23! EQU !maandp10! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon11! (
+	if !maandp23! EQU !maandp11! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon12! (
+	if !maandp23! EQU !maandp12! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon13! (
+	if !maandp23! EQU !maandp13! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon14! (
+	if !maandp23! EQU !maandp14! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon15! (
+	if !maandp23! EQU !maandp15! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon16! (
+	if !maandp23! EQU !maandp16! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon17! (
+	if !maandp23! EQU !maandp17! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon18! (
+	if !maandp23! EQU !maandp18! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon19! (
+	if !maandp23! EQU !maandp19! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon20! (
+	if !maandp23! EQU !maandp20! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon21! (
+	if !maandp23! EQU !maandp21! (
+		goto success
+	)
+)
+if !persoon23! EQU !persoon22! (
+	if !maandp23! EQU !maandp22! (
+		goto success
+	)
+)
+
+:nosuccess
+cls
+set /a lose=%lose%+1
+color 04
+echo no matches found!
+pause
+goto start
+
+:success
+cls
+set /a match=%match%+1
+color 02
+echo there was a match!
+pause
+goto start
